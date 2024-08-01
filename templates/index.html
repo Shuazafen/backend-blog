@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+  </head>
+  <body>
+    <header class="">
+      <nav>
+        <h1 class="logo">Blog<span class="">Site</span></h1>
+
+        <ul class="lower">
+          <li>Home</li>
+          <select name="" id="">
+            <option value="">name</option>
+          </select>
+          <li>Blog</li>
+          <li>About</li>
+          <li>Contact</li>
+          <form action="" class="">
+            <input type="text" class="search" placeholder="Search" />
+          </form>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="banners">
+        <div class="newspaper">
+          <div class="words">
+            <button class="banner-btn">NEWS</button>
+            <H1 class="news-banner">latest news from all over the world</H1>
+            <p class="content">National and international news at your fingertips</p>
+
+            <a class="details" href="">Show details ></a>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="musicpaper">
+            <div class="wordss">
+              <button class="banner-btn">MUSIC</button>
+
+              <h1 class="news-banner">What your music preference says about you and your personality</h1>
+
+              <a href="" class="details">Show details ></a>
+            </div>
+          </div>
+
+          <div class="financialpaper">
+            <div class="wordss">
+              <button class="banner-btn">FINANCIAL</button>
+
+              <h1 class="news-banner">State of the coin market and economy around the world</h1>
+
+              <a href="" class="details">Show details ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="">
+      <div class="blogs">
+        <ul class="items">
+          <img src="{% static 'images/download.png' %}" alt="" />
+
+        {% for blog in blogs %}
+            <div class="items">
+              <img src="{{ blog.image.url }}" alt="food image" class="img_holder" />
+            </div>
+
+            <div class="pt-5">
+              <div class="mb-2">
+                <h4>{{ blog.create_at }}</h4>
+                <h2 class="card__title">{{ blog.title }}</h2>
+                <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+        {% endfor %}
+        </ul>
+      </div>
+
+      <div class="arrow">
+        <button class="arrow-btn"><img class="arrows" src="/node_modules/remixicon/icons/Arrows/arrow-left-line.svg" alt="" /></button>
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="arrow-btn"><img class="arrows" src="/node_modules/remixicon/icons/Arrows/arrow-right-line.svg" alt="" /></button>
+      </div>
+    </main>
+
+    <main class="m2">
+      <h1 class="">P0PULAR BLOGS</h1>
+      <ul class=""></ul>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
